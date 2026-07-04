@@ -36,52 +36,60 @@
     <p>We collect data to provide, secure, and improve our services. We strictly adhere to data minimization principles.</p>
     <ul>
         <li><strong>Locally Stored Data:</strong> The App saves your alarm times, custom song selections, downloaded AI audio briefings (MP3s), and appearance preferences locally on your device. We do not transmit or store this configuration data on our servers.</li>
-        <li><strong>Location Data:</strong> If you enable the weather feature for your AI alarm briefing, we collect your approximate or precise location coordinates at the time the alarm triggers.</li>
-        <li><strong>Subscription & Billing Data:</strong> If you purchase the Premium AI Briefing, we collect anonymous purchase tokens from the Google Play Store to verify your active subscription status.</li>
+        <li><strong>Location Data (Version 2.0 AI Briefing):</strong> If you enable the weather feature for your AI alarm briefing, we collect your approximate or precise location coordinates (latitude and longitude) at the time the alarm triggers.</li>
+        <li><strong>Subscription & Billing Data:</strong> If you purchase the AI Briefing subscription, we collect anonymous purchase tokens from the Google Play Store to verify your active subscription status.</li>
         <li><strong>Automatically Collected Data:</strong> The App and its third-party services may collect diagnostic data, including your IP address, device name, OS version, and crash logs.</li>
-        <li><strong>Diagnostic & Debug Logs:</strong> The App may transmit debug logs (device info, App state) to our servers to help us troubleshoot technical issues.</li>
-        <li><strong>Diagnostic Identifier:</strong> You are assigned an anonymous, randomly generated Diagnostic ID via Firebase Authentication, used solely to associate logs with your device instance.</li>
+        <li><strong>Diagnostic & Debug Logs:</strong> To help us troubleshoot, the App transmits debug logs to our servers <strong>only when you manually initiate a bug report or error submission</strong>. These logs include device information, App state, and any information you provide.</li>
+        <li><strong>Diagnostic Identifier:</strong> You are assigned an anonymous, randomly generated Diagnostic ID via Firebase Authentication. This ID is anonymous by default; we only associate it with your identity if you manually provide it to us during a support interaction to help us resolve a technical issue and to allow us to fulfill data deletion requests.</li>
     </ul>
-
     <h2>3. How We Use Your Data & Our Legal Basis</h2>
+    <p></p>Under GDPR and LGPD, we must have a valid legal basis for processing your data. We process your data for the following purposes:</p>
     <ul>
-        <li><strong>Deliver AI Audio Briefing:</strong> Performance of a Contract.</li>
-        <li><strong>Provide Weather Updates:</strong> Consent (revocable in Android settings).</li>
-        <li><strong>Troubleshoot & Improve Stability:</strong> Legitimate Interest.</li>
-        <li><strong>Verify Subscriptions:</strong> Performance of a Contract / Legal Obligation.</li>
-        <li><strong>Display Advertisements:</strong> Consent / Legitimate Interest.</li>
+        <li><strong>To deliver the AI Audio Briefing (Performance of a Contract)</strong> We process your chosen news topics, news sources, and AI voice preferences via our cloud backend to generate your custom morning script and audio file.</li>
+        <li><strong>To provide Weather Updates (Consent):</strong> We process your location coordinates solely to fetch local weather data. You provide explicit consent via Android's device-level location permissions, which you can revoke at any time in your phone's settings.</li>
+        <li><strong>To Troubleshoot & Improve Stability (Legitimate Interest):</strong> We process debug logs and bug reports to identify technical failures and improve the App’s performance. This data is used strictly for internal development and quality assurance..</li>
+        <li><strong>To verify Subscriptions (Performance of a Contract / Legal Obligation):</strong> We process your Google Play purchase tokens to authenticate your premium access and prevent fraud.</li>
+        <li><strong>To display Advertisements (Consent / Legitimate Interest): </strong> We use device identifiers to serve ads. Where legally required (such as in the EU and Brazil), we rely on your explicit consent to serve personalized ads.</li>
     </ul>
 
     <h2>4. Third-Party Services and Data Sharing</h2>
-    <p>We do not sell your personal data. Your data is securely processed by:</p>
+    <p>We do not sell your personal data. However, to operate the Version 2.0 AI architecture, your data is securely processed by the following third-party infrastructure providers:</p>
     <ul>
-        <li><strong>Google Cloud & Firebase:</strong> Secure backend, authentication, and bug reporting.</li>
-        <li><strong>Google Generative AI (Gemini) & Cloud Text-to-Speech:</strong> Processes text scripts into audio.</li>
-        <li><strong>Open-Meteo API:</strong> Returns weather forecasts based on your coordinates.</li>
-        <li><strong>Google Play Developer API:</strong> Processes subscription tokens.</li>
-        <li><strong>Google AdMob:</strong> Serves ads using advertising identifiers.</li>
+        <li><strong>Google Cloud & Firebase:</strong> Acts as our secure backend. We use Firebase Authentication to manage your anonymous Diagnostic ID and Firebase Firestore to securely receive bug reports. This infrastructure ensures that your diagnostic data is isolated and can be identified for deletion if you provide your Diagnostic ID</li>
+        <li><strong>Google Generative AI (Gemini) & Cloud Text-to-Speech:</strong> Processes text scripts into audio files (MP3).</li>
+        <li><strong>Open-Meteo API:</strong> Receives your latitude and longitude coordinates to return current weather forecasts.</li>
+        <li><strong>Google Play Developer API:</strong> Processes subscription tokens for billing verification.</li>
+        <li><strong>Google AdMob:</strong> Uses cookies and mobile advertising identifiers (such as Android’s Advertising ID) to serve ads. You can manage personalized advertising at <a href="https://www.google.com/url?q=https://policies.google.com/technologies/ads&sa=D&source=editors&ust=1783202522583641&usg=AOvVaw2oBTYartVz_AwnJ8C7t0dF">Google's Privacy & Terms</a>.</li>
     </ul>
 
     <h2>5. International Data Transfers</h2>
     <p>By using the App, your data may be transferred to and processed in the United States or other countries. We ensure compliance with GDPR and LGPD via recognized legal safeguards, such as Standard Contractual Clauses (SCCs).</p>
 
     <h2>6. Data Retention</h2>
-    <p>Our cloud backend is stateless. Real-time data (like location or news topics) is processed ephemerally. Debug logs and bug reports are stored securely for up to 90 days before permanent deletion.</p>
+    <p>Our cloud backend is <strong>stateless</strong>. When your alarm triggers, the data sent to our servers (location, news topics, subscription tokens) is processed ephemerally in real-time.<\p>
+    <p>We do not maintain server-side databases of your location history or personal alarm habits. However, <strong>debug logs and bug reports are stored on our secure servers for a limited period (e.g., up to 90 days)</strong> to allow our developers to investigate and resolve reported issues. After this troubleshooting period, the logs are automatically and permanently deleted.</p>
 
     <h2>7. Your Privacy Rights (GDPR & LGPD)</h2>
-    <p>You have the right to access, rectify, erase, or request a copy of your data. Because we do not collect names or emails, you must provide your <strong>Diagnostic ID</strong> (found in the App's 'Info' screen) for us to identify server-side data.</p>
+    <p>If you are a resident of the European Economic Area (EEA) or Brazil, you have fundamental rights regarding your personal data:</p>
+    <li><strong>The Right to Access & Portability:</strong> You have the right to request a copy of the personal data we hold about you.</li>
+    <li><strong>The Right to Rectification:</strong> You have the right to request that we correct any inaccurate information.</li>
+    <li><strong>The Right to Erasure (Right to be Forgotten):</strong> You have the right to request that we delete your personal data. <i>(Note: Most of your personal configuration is stored only on your device. However, for any data stored on our servers—such as debug logs associated with your device identifier—you may exercise your right to erasure by contacting us at the email below)</i>.</li>
+    <li><strong>The Right to Withdraw Consent:</strong> You can withdraw your consent for location tracking or personalized advertising at any time via your Android device OS settings.</li>
+    <li><strong>The Right to Complain:</strong> You have the right to lodge a complaint with your local Data Protection Authority (such as the ANPD in Brazil or your local EU supervisory authority).</li>
+    <li><strong>Note on Data Identification:</strong> Because we do not collect names, phone numbers, or email addresses, we can only identify server-side data (such as diagnostic debug logs) if you provide us with your unique <em>Diagnostic ID</em>. You can find and copy this ID within the App's '<em>Info</em>' screen or the '<em>Report a Bug</em>' window. Without this ID, we have no technical means of identifying which data belongs to your specific device. You may exercise your right to erasure or access by contacting us at the email below and providing your Diagnostic ID.</li>
+    <p>To exercise any of these rights, please contact us at the email provided below. We will respond within the legally mandated timeframes (usually within 15 days for LGPD and 30 days for GDPR).</p>
 
     <h2>8. Data Security</h2>
-    <p>Local data security is managed by your device's native features (lock screen/biometrics). All cloud transmissions are encrypted using HTTPS.</p>
-
+    <p>We value your trust. Because your personal alarm settings and audio files are saved locally on your device, their primary security is tied to your device's inherent security features (such as your lock screen PIN or biometrics). All cloud transmissions between your device and our Firebase servers are encrypted in transit using secure HTTPS protocols.</p>
+    
     <h2>9. Children's Privacy</h2>
-    <p>The App does not address anyone under the age of 13 (or 16 in certain jurisdictions). We do not knowingly collect information from children.</p>
+    <p>The App does not address anyone under the age of 13 (or under 16 in certain EU jurisdictions). We do not knowingly collect personally identifiable information from children. If you are a parent or guardian and you are aware that your child has provided us with personal information, please contact us so that we will be able to take necessary actions.</p>
 
     <h2>10. Changes to This Privacy Policy</h2>
-    <p>We may update this policy periodically. Changes are effective immediately upon posting and updating the "Effective Date" at the top of this document.</p>
+    <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Effective Date" at the top. You are advised to review this Privacy Policy periodically for any changes.</p>
 
     <h2>11. Contact Us & Data Protection Officer</h2>
-    <p>For questions or to exercise your data rights, contact our Data Protection Officer at: <a href="mailto:privacy@alarmrotation.com">privacy@alarmrotation.com</a>.</p>
+    <p>If you have any questions about this Privacy Policy, or if you wish to exercise your data rights under GDPR or LGPD, please contact us at: <a href="mailto:privacy@alarmrotation.com">privacy@alarmrotation.com</a>.</p>
 
     <hr style="border: 0; border-top: 1px solid #333; margin: 40px 0;">
     <p><a href="index.html">← Return to Home</a></p>
