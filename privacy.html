@@ -59,7 +59,7 @@
 </head>
 <body>
     <h1>Privacy Policy</h1>
-    <p><strong>Effective Date:</strong> July 4, 2026</p>
+    <p><strong>Effective Date:</strong> July 12, 2026</p>
 
     <h2>1. Introduction & Data Controller</h2>
     <p>Tuxedo Cat Apps ("we," "our," or "us") respects your privacy. This Privacy Policy explains how we collect, use, and share information about you when you use the Alarm Rotation mobile application (the "App").</p>
@@ -73,7 +73,7 @@
         <li><strong>Subscription & Billing Data:</strong> If you purchase the AI Briefing subscription, we collect anonymous purchase tokens from the Google Play Store to verify your active subscription status.</li>
         <li><strong>Automatically Collected Data:</strong> The App and its third-party services may collect diagnostic data, including your IP address, device name, OS version, and crash logs.</li>
         <li><strong>Diagnostic & Debug Logs:</strong> To help us troubleshoot, the App transmits debug logs to our servers <strong>only when you manually initiate a bug report or error submission</strong>. These logs include device information, App state, and any information you provide.</li>
-        <li><strong>Diagnostic Identifier:</strong> You are assigned an anonymous, randomly generated Diagnostic ID via Firebase Authentication. This ID is anonymous by default; we only associate it with your identity if you manually provide it to us during a support interaction to help us resolve a technical issue and to allow us to fulfill data deletion requests.</li>
+        <li><strong>Diagnostic Identifier:</strong> You are assigned an anonymous, randomly generated Diagnostic ID via Firebase Authentication. This ID is anonymous by default. We use it to <strong>verify your authorization to access our cloud services</strong> and to associate logs with your specific installation if you manually provide the ID to us during a support interaction to help us resolve technical issues or fulfill data deletion requests.</li>
     </ul>
     <h2>3. Data Retention & Deletion</h2>
     <p>We believe in data minimization. Our cloud backend is <strong>stateless</strong>: when your alarm triggers, data is processed in real-time and not stored permanently.</p>
@@ -115,9 +115,13 @@
     </ul>
     <p>To exercise any of these rights, please contact us at the email provided below. We will respond within the legally mandated timeframes (usually within 15 days for LGPD and 30 days for GDPR).</p>
     
-
     <h2>8. Data Security</h2>
-    <p>We value your trust. Because your personal alarm settings and audio files are saved locally on your device, their primary security is tied to your device's inherent security features (such as your lock screen PIN or biometrics). All cloud transmissions between your device and our Firebase servers are encrypted in transit using secure HTTPS protocols.</p>
+<p>We prioritize your privacy and security. We have designed our application with the following protections:</p>
+<ul>
+    <li><strong>Local Storage:</strong> Personal alarm settings and local preferences are stored directly on your device. Their security is tied to your device’s inherent protections, such as your lock screen PIN, password, or biometrics.</li>
+    <li><strong>Data Continuity:</strong> We utilize the Android Auto Backup service to ensure your alarm preferences are preserved when you upgrade or reinstall your device. This data is handled securely by the Android operating system, remains within your private cloud or device storage, and is never accessed, collected, or shared by the developer.</li>
+    <li><strong>Encrypted Transmission:</strong> All communications between your device and our Firebase servers are encrypted in transit using secure HTTPS protocols.</li>
+</ul>
     
     <h2>9. Children's Privacy</h2>
     <p>The App does not address anyone under the age of 13 (or under 16 in certain EU jurisdictions). We do not knowingly collect personally identifiable information from children. If you are a parent or guardian and you are aware that your child has provided us with personal information, please contact us so that we will be able to take necessary actions.</p>
